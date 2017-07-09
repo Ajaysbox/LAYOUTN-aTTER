@@ -1,7 +1,10 @@
 <div class="row">
-  <div class="col-md-8">
-   <ul class="list-group" *ngFor="let acc of accountList">
-     {{acc.accName}}
-   </ul>
+  <div class="col-md-8 col-md-offset-2">
+    <h3>{{accList.accName}}</h3>
+    <hr>
+    <p>this account is {{accList.accType}} {{index}}</p>
+    <button class="btn btn-primary" (click)="setAccStatus('active')">Set to Active</button>
+    <button class="btn btn-primary" (click)="setAccStatus('inactive')">Set to InActive</button>
+    <button class="btn btn-primary" (click)="setAccStatus('hidden')">Set to Unknown</button>
   </div>
 </div>

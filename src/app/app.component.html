@@ -1,5 +1,9 @@
 
-<app-add-account></app-add-account>
-<app-account-list  >
-  <!--<p>Hello Lost {{accountList[n]}}</p>-->
+<app-add-account (accountAdded)="newAccountAdded($event)"></app-add-account>
+<app-account-list  *ngFor="let acc of accounts; let i = index"
+[accList]="acc"
+[index]="i"
+(setStatus)="onStatusChange($event)"
+>
+
 </app-account-list>

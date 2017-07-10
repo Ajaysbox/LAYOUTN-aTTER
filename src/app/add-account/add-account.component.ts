@@ -15,7 +15,9 @@ export class AddAccountComponent implements OnInit {
 //--@Output() accountAdded = new EventEmitter<Account>()
 //@ViewChild('ingInputType')ingInputTypeRef:ElementRef;
   constructor(private logService:LoggingService,
-  private accountService:AccountsService) { }
+  private accountService:AccountsService) {
+    this.accountService.statusUpdated.subscribe((status:string)=>alert(status))
+   }
 
   ngOnInit() {
   }
@@ -27,6 +29,6 @@ export class AddAccountComponent implements OnInit {
    // --this.accountAdded.emit(accountAdded);
     const service = new LoggingService();
     // this is the manual method...//service.logStatusChange(accountVal+" "+accTypeRef);
-    this.logService.logStatusChange(accountVal+" "+accTypeRef)
+    //this.logService.logStatusChange(accountVal+" "+accTypeRef)
   }
 }

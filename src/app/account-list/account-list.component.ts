@@ -18,9 +18,10 @@ export class AccountListComponent implements OnInit {
   ngOnInit() {
   }
   setAccStatus(status:string){
-    this.accountService.updateStatus({id:this.index,status:status})
+    this.accountService.updateStatus({id:this.index,status:status});
+    this.accountService.statusUpdated.emit("status updated from centralised "+status)
    //-- this.setStatus.emit({id:this.index,newStatus:status});
-    this.loggingService.logStatusChange("status changed to "+status)
+   // this.loggingService.logStatusChange("status changed to "+status)
    // console.log("status changed to "+status);
   }
 }
